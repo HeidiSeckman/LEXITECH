@@ -11,9 +11,10 @@
   * { box-sizing:border-box; margin:0; padding:0; }
   body { background:radial-gradient(circle at 50% 18%, #2E1023 0%, #12070E 68%); color:var(--text); font-family:'Plus Jakarta Sans',sans-serif; min-height:100vh; overflow-x:hidden; }
   .wrap { max-width:1120px; margin:0 auto; padding:28px 20px 44px; position:relative; z-index:2; }
-  .topbar { display:flex; justify-content:space-between; align-items:center; background:var(--card); border:1px solid var(--border); backdrop-filter:blur(14px); border-radius:16px; padding:14px 22px; margin-bottom:28px; }
-  .brand { display:flex; align-items:center; gap:12px; font-weight:800; font-size:22px; letter-spacing:-0.02em; }
-  .brand img { width:44px; height:44px; object-fit:contain; border-radius:10px; }
+  .topbar { display:flex; justify-content:space-between; align-items:center; background:var(--card); border:1px solid var(--border); backdrop-filter:blur(14px); border-radius:16px; padding:12px 22px; margin-bottom:28px; }
+  .brand { display:flex; align-items:center; gap:14px; font-weight:800; font-size:25px; letter-spacing:-0.02em; }
+  .logo-badge { width:56px; height:56px; border-radius:14px; background:radial-gradient(circle, rgba(255,42,133,0.22) 0%, rgba(18,7,14,0.9) 100%); border:1.5px solid var(--border); overflow:hidden; display:flex; align-items:center; justify-content:center; box-shadow:0 0 18px rgba(255,42,133,0.35); }
+  .logo-badge img { width:135%; height:135%; object-fit:cover; object-position:center 34%; }
   .brand span { color:var(--pink); }
   .pill { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--rose); border:1px solid var(--border); background:rgba(255,42,133,0.12); padding:6px 14px; border-radius:999px; }
   .hero { text-align:center; padding:10px 10px 26px; }
@@ -45,7 +46,10 @@
 <body>
 <div class="wrap">
   <div class="topbar">
-    <div class="brand"><img src="LEXItech.PNG" alt="LexiTech Logo" /><div>LEXI<span>TECH</span></div></div>
+    <div class="brand">
+      <div class="logo-badge"><img src="LEXItech.PNG" alt="LexiTech Sphere" /></div>
+      <div>LEXI<span>TECH</span></div>
+    </div>
     <div class="pill">● STUDIO ONLINE // v2.0</div>
   </div>
 
