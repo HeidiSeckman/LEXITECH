@@ -8,36 +8,69 @@
 <link href="https://googleapis.com" rel="stylesheet" />
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Plus Jakarta Sans', sans-serif; color: #1A161F; background-color: #FFFFFF; background-image: radial-gradient(#E8C5D6 0.85px, transparent 0.85px); background-size: 24px 24px; line-height: 1.6; }
-  .container { max-width: 1120px; margin: 0 auto; padding: 28px 20px 48px; }
-  .mono { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #B81D6F; }
-  nav { background: rgba(255,255,255,0.95); border: 1.5px solid #E5B8CE; border-radius: 16px; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; box-shadow: 0 4px 20px rgba(184,29,111,0.07); margin-bottom: 26px; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif; color: #1A161F; background-color: #FFFFFF;
+    background-image: radial-gradient(#E5B8CE 0.9px, transparent 0.9px); background-size: 24px 24px; line-height: 1.6;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 26px 20px 52px; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #B81D6F; }
+  nav {
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border: 1.5px solid #E5B8CE; border-radius: 16px;
+    padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;
+    box-shadow: 0 6px 24px rgba(184,29,111,0.08); margin-bottom: 26px; position: sticky; top: 14px; z-index: 50;
+  }
   .brand { display: flex; align-items: center; gap: 14px; }
-  .brand img { width: 64px; height: 64px; object-fit: contain; border-radius: 14px; background: #FDF2F7; padding: 4px; border: 1.5px solid #E5B8CE; }
-  .brand-title { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .brand img { width: 62px; height: 62px; object-fit: contain; border-radius: 14px; background: #FDF2F7; padding: 4px; border: 1.5px solid #E5B8CE; }
+  .brand-title { font-size: 25px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
   .brand-title span { color: #B81D6F; }
+  .nav-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   .pill { background: #FDF2F7; border: 1px solid #B81D6F; border-radius: 999px; padding: 6px 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #B81D6F; }
-  .hero { background: linear-gradient(135deg, #24101C 0%, #4A1533 55%, #881652 100%); border-radius: 20px; padding: 46px 38px; color: #FFFFFF; box-shadow: 0 14px 34px rgba(184,29,111,0.18); margin-bottom: 34px; }
-  .hero .mono { color: #F9B8D8; display: block; margin-bottom: 10px; }
-  .hero h1 { font-size: 38px; font-weight: 800; line-height: 1.18; margin-bottom: 14px; letter-spacing: -0.02em; }
-  .hero p { font-size: 17px; opacity: 0.92; max-width: 740px; margin-bottom: 24px; }
+  .hero {
+    background: radial-gradient(circle at top right, #9D175D 0%, #4A1533 48%, #1C0B15 100%);
+    border-radius: 22px; padding: 44px 38px; color: #FFFFFF; box-shadow: 0 18px 42px rgba(184,29,111,0.22);
+    margin-bottom: 34px; display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 30px; align-items: center;
+    border: 1.5px solid rgba(255, 145, 200, 0.25);
+  }
+  .hero .mono { color: #FF94C8; display: block; margin-bottom: 10px; }
+  .hero h1 { font-size: 38px; font-weight: 800; line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.02em; }
+  .hero p { font-size: 16px; opacity: 0.92; margin-bottom: 24px; }
   .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-primary { background: #B81D6F; color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 12px 22px; border-radius: 10px; border: 1.5px solid #FF7EB9; display: inline-block; }
-  .btn-outline { background: rgba(255,255,255,0.1); color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 12px 22px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.4); display: inline-block; }
+  .btn-primary { background: linear-gradient(135deg, #D92382 0%, #A3145E 100%); color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 12px 22px; border-radius: 10px; border: 1px solid #FF8AC4; box-shadow: 0 6px 18px rgba(217,35,130,0.35); transition: 0.2s; }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .btn-outline { background: rgba(255,255,255,0.08); color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 12px 20px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.35); transition: 0.2s; }
+  .btn-outline:hover { background: rgba(255,255,255,0.16); }
+  .terminal {
+    background: rgba(18, 8, 14, 0.85); border: 1.5px solid rgba(255, 138, 196, 0.35); border-radius: 16px;
+    padding: 18px 20px; font-family: 'JetBrains Mono', monospace; font-size: 12px; box-shadow: inset 0 0 24px rgba(184,29,111,0.25);
+  }
+  .term-top { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 10px; margin-bottom: 12px; color: #FF94C8; font-size: 11px; }
+  .dots span { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; background: #FF5F8F; }
+  .term-row { margin-bottom: 10px; line-height: 1.5; color: #F7E9F0; }
+  .badge-risk { background: #B81D6F; color: #FFFFFF; padding: 2px 8px; border-radius: 5px; font-size: 10px; font-weight: 700; }
+  .badge-cite { background: rgba(255,148,200,0.16); color: #FF94C8; border: 1px solid rgba(255,148,200,0.4); padding: 2px 8px; border-radius: 5px; font-size: 10px; }
+  .pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 36px; }
+  .step { background: #FDF2F7; border: 1.5px solid #E5B8CE; border-radius: 14px; padding: 18px 20px; }
+  .step h4 { font-size: 16px; font-weight: 800; margin: 4px 0; }
+  .step p { font-size: 13.5px; color: #3D3545; }
   .section-head { margin-bottom: 18px; }
-  .section-head h2 { font-size: 26px; font-weight: 800; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; margin-bottom: 34px; }
-  .card { background: #FFFFFF; border: 1.5px solid #E5B8CE; border-top: 5px solid #B81D6F; border-radius: 16px; padding: 26px; box-shadow: 0 6px 20px rgba(184,29,111,0.06); display: flex; flex-direction: column; justify-content: space-between; }
-  .card h3 { font-size: 22px; font-weight: 800; margin: 6px 0 10px; }
-  .card p { font-size: 14.5px; color: #3D3545; margin-bottom: 16px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  .section-head h2 { font-size: 28px; font-weight: 800; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 24px; margin-bottom: 36px; }
+  .card {
+    background: #FFFFFF; border: 1.5px solid #E5B8CE; border-top: 5px solid #B81D6F; border-radius: 18px;
+    padding: 28px; box-shadow: 0 8px 24px rgba(184,29,111,0.07); display: flex; flex-direction: column; justify-content: space-between; transition: 0.22s;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(184,29,111,0.15); border-color: #B81D6F; }
+  .card h3 { font-size: 23px; font-weight: 800; margin: 6px 0 10px; }
+  .card p { font-size: 14.5px; color: #3D3545; margin-bottom: 18px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
   .tag { background: #FDF2F7; border: 1px solid #E5B8CE; color: #B81D6F; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
   .card-links { display: flex; gap: 10px; flex-wrap: wrap; }
-  .btn-launch { background: linear-gradient(135deg, #B81D6F 0%, #8E1454 100%); color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 10px 18px; border-radius: 9px; font-size: 14px; }
-  .btn-code { background: #FDF2F7; color: #B81D6F; border: 1.5px solid #E5B8CE; text-decoration: none; font-weight: 700; padding: 10px 16px; border-radius: 9px; font-size: 14px; }
-  .about { background: #FDF2F7; border: 1.5px solid #E5B8CE; border-radius: 16px; padding: 26px 30px; margin-bottom: 28px; }
-  .about h3 { font-size: 20px; font-weight: 800; margin: 4px 0 8px; }
-  footer { background: #FDF2F7; border: 1px solid #E5B8CE; border-radius: 14px; padding: 18px; text-align: center; font-size: 13px; color: #3D3545; }
+  .btn-launch { background: linear-gradient(135deg, #B81D6F 0%, #8E1454 100%); color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 11px 19px; border-radius: 10px; font-size: 14px; box-shadow: 0 4px 12px rgba(184,29,111,0.22); }
+  .btn-code { background: #FDF2F7; color: #B81D6F; border: 1.5px solid #E5B8CE; text-decoration: none; font-weight: 700; padding: 11px 16px; border-radius: 10px; font-size: 14px; }
+  .about { background: linear-gradient(135deg, #FDF2F7 0%, #FFFFFF 100%); border: 1.5px solid #E5B8CE; border-left: 6px solid #B81D6F; border-radius: 16px; padding: 26px 30px; margin-bottom: 28px; }
+  .about h3 { font-size: 21px; font-weight: 800; margin: 4px 0 8px; }
+  footer { background: #FDF2F7; border: 1.5px solid #E5B8CE; border-radius: 14px; padding: 18px; text-align: center; font-size: 13px; color: #3D3545; }
 </style>
 </head>
 <body>
@@ -50,22 +83,54 @@
         <div class="mono">LEGAL &amp; TAX AI STUDIO</div>
       </div>
     </div>
-    <div class="pill">● ZERO-HALLUCINATION GROUNDED AI SUITE</div>
+    <div class="nav-right">
+      <span class="pill">● STUDIO SUITE v2.0 // ONLINE</span>
+    </div>
   </nav>
 
   <section class="hero">
-    <span class="mono">BUILT BY HEIDI SECKMAN • FOUNDER &amp; AI PRODUCT BUILDER</span>
-    <h1>Closed-Book AI Tools Built for Legal &amp; Tax Precision.</h1>
-    <p>LexiTech builds zero-hallucination document intelligence applications that pit contracts and federal tax manuals against strict citation rules—preventing costly legal and IRS mistakes before documents are signed.</p>
-    <div class="hero-btns">
-      <a href="#apps" class="btn-primary">⚡ Explore Live Applications</a>
-      <a href="https://github.com" target="_blank" class="btn-outline">💻 View GitHub Portfolio</a>
+    <div>
+      <span class="mono">FOUNDER &amp; AI PRODUCT BUILDER • HEIDI SECKMAN</span>
+      <h1>Forensic AI Built for Legal &amp; Tax Precision.</h1>
+      <p>LexiTech engineers closed-book, zero-hallucination AI applications that pit private legal contracts directly against federal IRS manuals—catching hidden tax collisions and drafting balanced redlines before execution.</p>
+      <div class="hero-btns">
+        <a href="#apps" class="btn-primary">⚡ Launch Live Suite</a>
+        <a href="https://github.com" target="_blank" class="btn-outline">💻 GitHub Repositories</a>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="term-top">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div>COLLISION_ENGINE_v2.0 // LIVE TRACE</div>
+      </div>
+      <div class="term-row"><span class="badge-cite">CORPUS A</span> Marital Settlement § 4.2: Noncustodial parent claims child without signed Form 8332.</div>
+      <div class="term-row"><span class="badge-cite">CORPUS B</span> IRS Pub 4012, Tab C, Page C-4: Post-2008 decrees cannot substitute for Form 8332.</div>
+      <div class="term-row"><span class="badge-risk">HIGH RISK COLLISION</span> Clause invalid under IRC § 152(e) → Generating IRS-compliant redline fix...</div>
     </div>
   </section>
 
+  <div class="pipeline">
+    <div class="step">
+      <div class="mono">PHASE 01 // INGESTION</div>
+      <h4>Multi-Corpus PDF Upload</h4>
+      <p>Processes private legal agreements alongside 61MB+ official IRS publications in real time.</p>
+    </div>
+    <div class="step">
+      <div class="mono">PHASE 02 // VERIFICATION</div>
+      <h4>Closed-Book Grounding</h4>
+      <p>Strict system prompts forbid outside guessing—every finding anchors to exact pages &amp; tabs.</p>
+    </div>
+    <div class="step">
+      <div class="mono">PHASE 03 // SYNTHESIS</div>
+      <h4>Redlines &amp; Audit Export</h4>
+      <p>Outputs balanced replacement clauses and one-click downloadable legal-tax audit memos.</p>
+    </div>
+  </div>
+
   <div class="section-head" id="apps">
-    <div class="mono">PRODUCTION SUITE // v2.0</div>
-    <h2>Live LexiTech Applications</h2>
+    <div class="mono">DEPLOYED APPLICATIONS // v2.0</div>
+    <h2>LexiTech Production Suite</h2>
   </div>
 
   <div class="grid">
@@ -78,7 +143,7 @@
           <span class="tag">Dual-PDF Cross-Exam</span>
           <span class="tag">IRS Pub 4012 / 17</span>
           <span class="tag">Auto-Redlines</span>
-          <span class="tag">Built-In Demo</span>
+          <span class="tag">Built-In Sandbox</span>
         </div>
       </div>
       <div class="card-links">
@@ -96,7 +161,7 @@
           <span class="tag">Zero-Hallucination</span>
           <span class="tag">61MB+ IRS PDFs</span>
           <span class="tag">Exact Page Citations</span>
-          <span class="tag">.TXT Export</span>
+          <span class="tag">.TXT Audit Export</span>
         </div>
       </div>
       <div class="card-links">
@@ -107,7 +172,7 @@
   </div>
 
   <div class="about">
-    <div class="mono">STUDIO MISSION // ABOUT THE FOUNDER</div>
+    <div class="mono">STUDIO ARCHITECTURE // ABOUT THE FOUNDER</div>
     <h3>Architected by Heidi Seckman</h3>
     <p>Combining legal studies, tax preparation training, and Python AI engineering, LexiTech bridges the blind spot between contract drafting and federal tax compliance—turning complex statutory and IRS manuals into fast, verifiable audit workflows.</p>
   </div>
