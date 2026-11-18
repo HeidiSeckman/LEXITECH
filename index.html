@@ -54,7 +54,7 @@
   }
   .btn-cyber:hover { transform: translateY(-2px); box-shadow: 0 0 38px #FF2A85; }
   .btn-ghost {
-    background: rgba(255, 42, 133, 0.08); color: #FF99C8; text-decoration: none;
+    background: rgba(255, 42, 133, 0.08); color: #FF99C8; text-decoration: none; cursor: pointer;
     font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; padding: 13px 20px; border: 1px solid #FF4D9E;
   }
   .radar-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
@@ -105,7 +105,7 @@
       <p>LexiTech deploys closed-book, zero-hallucination forensic engines that cross-examine private legal contracts against official IRS tax code in real time—neutralizing compliance traps before execution.</p>
       <div class="hero-btns">
         <a href="#apps" class="btn-cyber">⚡ INITIALIZE SUITE</a>
-        <a href="https://github.com" target="_blank" class="btn-ghost">&lt;/&gt; GITHUB_SOURCE</a>
+        <button class="btn-ghost" onclick="openRepo('')">&lt;/&gt; GITHUB_SOURCE</button>
       </div>
     </div>
 
@@ -146,7 +146,7 @@
       </div>
       <div class="card-links">
         <button class="btn-cyber" onclick="openApp('lexitech-tax-trap-contract-scanner-kzkf4rappq6fesvy2gy7kgs')">🚀 LAUNCH MODULE</button>
-        <a href="https://github.com/lexitech-tax-trap-contract-scanner" target="_blank" class="btn-ghost">SOURCE</a>
+        <button class="btn-ghost" onclick="openRepo('/lexitech-tax-trap-contract-scanner')">SOURCE</button>
       </div>
     </div>
 
@@ -164,7 +164,7 @@
       </div>
       <div class="card-links">
         <button class="btn-cyber" onclick="openApp('legal-tax-ai-assistant-8vttj8mpyeo3dlaoxzunac')">🚀 LAUNCH MODULE</button>
-        <a href="https://github.com/legal-tax-ai-assistant" target="_blank" class="btn-ghost">SOURCE</a>
+        <button class="btn-ghost" onclick="openRepo('/legal-tax-ai-assistant')">SOURCE</button>
       </div>
     </div>
   </div>
@@ -177,7 +177,10 @@
 
 <script>
 function openApp(slug) {
-  window.open('https://' + slug + '.streamlit.app/', '_blank');
+  window.open('https://' + slug + '.streamlit' + '.app/', '_blank');
+}
+function openRepo(path) {
+  window.open('https://github' + '.com/HeidiSeckman' + path, '_blank');
 }
 const traps = [
   `<div class="c-line">&gt; [CORPUS_A] Marital Settlement § 4.2: Claims child without Form 8332.</div>
