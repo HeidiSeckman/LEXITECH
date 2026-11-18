@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LexiTech | Legal & Tax AI Studio by Heidi Seckman</title>
+<link rel="icon" href="LEXItech.PNG" />
+<link href="https://googleapis.com" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; color: #1A161F; background-color: #FFFFFF; background-image: radial-gradient(#E8C5D6 0.85px, transparent 0.85px); background-size: 24px 24px; line-height: 1.6; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 28px 20px 48px; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #B81D6F; }
+  nav { background: rgba(255,255,255,0.95); border: 1.5px solid #E5B8CE; border-radius: 16px; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; box-shadow: 0 4px 20px rgba(184,29,111,0.07); margin-bottom: 26px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { width: 64px; height: 64px; object-fit: contain; border-radius: 14px; background: #FDF2F7; padding: 4px; border: 1.5px solid #E5B8CE; }
+  .brand-title { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .brand-title span { color: #B81D6F; }
+  .pill { background: #FDF2F7; border: 1px solid #B81D6F; border-radius: 999px; padding: 6px 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: #B81D6F; }
+  .hero { background: linear-gradient(135deg, #24101C 0%, #4A1533 55%, #881652 100%); border-radius: 20px; padding: 46px 38px; color: #FFFFFF; box-shadow: 0 14px 34px rgba(184,29,111,0.18); margin-bottom: 34px; }
+  .hero .mono { color: #F9B8D8; display: block; margin-bottom: 10px; }
+  .hero h1 { font-size: 38px; font-weight: 800; line-height: 1.18; margin-bottom: 14px; letter-spacing: -0.02em; }
+  .hero p { font-size: 17px; opacity: 0.92; max-width: 740px; margin-bottom: 24px; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary { background: #B81D6F; color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 12px 22px; border-radius: 10px; border: 1.5px solid #FF7EB9; display: inline-block; }
+  .btn-outline { background: rgba(255,255,255,0.1); color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 12px 22px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.4); display: inline-block; }
+  .section-head { margin-bottom: 18px; }
+  .section-head h2 { font-size: 26px; font-weight: 800; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; margin-bottom: 34px; }
+  .card { background: #FFFFFF; border: 1.5px solid #E5B8CE; border-top: 5px solid #B81D6F; border-radius: 16px; padding: 26px; box-shadow: 0 6px 20px rgba(184,29,111,0.06); display: flex; flex-direction: column; justify-content: space-between; }
+  .card h3 { font-size: 22px; font-weight: 800; margin: 6px 0 10px; }
+  .card p { font-size: 14.5px; color: #3D3545; margin-bottom: 16px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  .tag { background: #FDF2F7; border: 1px solid #E5B8CE; color: #B81D6F; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
+  .card-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn-launch { background: linear-gradient(135deg, #B81D6F 0%, #8E1454 100%); color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 10px 18px; border-radius: 9px; font-size: 14px; }
+  .btn-code { background: #FDF2F7; color: #B81D6F; border: 1.5px solid #E5B8CE; text-decoration: none; font-weight: 700; padding: 10px 16px; border-radius: 9px; font-size: 14px; }
+  .about { background: #FDF2F7; border: 1.5px solid #E5B8CE; border-radius: 16px; padding: 26px 30px; margin-bottom: 28px; }
+  .about h3 { font-size: 20px; font-weight: 800; margin: 4px 0 8px; }
+  footer { background: #FDF2F7; border: 1px solid #E5B8CE; border-radius: 14px; padding: 18px; text-align: center; font-size: 13px; color: #3D3545; }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <div class="brand">
+      <img src="LEXItech.PNG" alt="LexiTech Logo" />
+      <div>
+        <div class="brand-title">LEXI<span>TECH</span></div>
+        <div class="mono">LEGAL &amp; TAX AI STUDIO</div>
+      </div>
+    </div>
+    <div class="pill">● ZERO-HALLUCINATION GROUNDED AI SUITE</div>
+  </nav>
+
+  <section class="hero">
+    <span class="mono">BUILT BY HEIDI SECKMAN • FOUNDER &amp; AI PRODUCT BUILDER</span>
+    <h1>Closed-Book AI Tools Built for Legal &amp; Tax Precision.</h1>
+    <p>LexiTech builds zero-hallucination document intelligence applications that pit contracts and federal tax manuals against strict citation rules—preventing costly legal and IRS mistakes before documents are signed.</p>
+    <div class="hero-btns">
+      <a href="#apps" class="btn-primary">⚡ Explore Live Applications</a>
+      <a href="https://github.com" target="_blank" class="btn-outline">💻 View GitHub Portfolio</a>
+    </div>
+  </section>
+
+  <div class="section-head" id="apps">
+    <div class="mono">PRODUCTION SUITE // v2.0</div>
+    <h2>Live LexiTech Applications</h2>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div>
+        <div class="mono">FLAGSHIP APP 02 // DUAL-CORPUS AUDITOR</div>
+        <h3>Tax-Trap Contract Scanner</h3>
+        <p>Pits private legal agreements (divorce settlements, 1099 contracts, leases) directly against official IRS tax publications simultaneously to catch hidden tax collisions, cite exact sections &amp; pages, and draft balanced renegotiation redlines.</p>
+        <div class="tags">
+          <span class="tag">Dual-PDF Cross-Exam</span>
+          <span class="tag">IRS Pub 4012 / 17</span>
+          <span class="tag">Auto-Redlines</span>
+          <span class="tag">Built-In Demo</span>
+        </div>
+      </div>
+      <div class="card-links">
+        <a href="https://streamlit.app" target="_blank" class="btn-launch">🚀 Launch Live App</a>
+        <a href="https://github.com/lexitech-tax-trap-contract-scanner" target="_blank" class="btn-code">GitHub Code</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="mono">CORE APP 01 // CLOSED-BOOK RESEARCHER</div>
+        <h3>Legal &amp; Tax Document AI Assistant</h3>
+        <p>Ingests contracts, commercial leases, and multi-megabyte IRS reference manuals (verified up to 61MB+ PDFs) to extract high-risk clauses and verify tax rules with mandatory section, tab, and page citations.</p>
+        <div class="tags">
+          <span class="tag">Zero-Hallucination</span>
+          <span class="tag">61MB+ IRS PDFs</span>
+          <span class="tag">Exact Page Citations</span>
+          <span class="tag">.TXT Export</span>
+        </div>
+      </div>
+      <div class="card-links">
+        <a href="https://streamlit.app" target="_blank" class="btn-launch">🚀 Launch Live App</a>
+        <a href="https://github.com/legal-tax-ai-assistant" target="_blank" class="btn-code">GitHub Code</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="about">
+    <div class="mono">STUDIO MISSION // ABOUT THE FOUNDER</div>
+    <h3>Architected by Heidi Seckman</h3>
+    <p>Combining legal studies, tax preparation training, and Python AI engineering, LexiTech bridges the blind spot between contract drafting and federal tax compliance—turning complex statutory and IRS manuals into fast, verifiable audit workflows.</p>
+  </div>
+
+  <footer>
+    <strong>&copy; 2026 LexiTech by Heidi Seckman. All Rights Reserved.</strong><br />
+    Proprietary software, interface design, and branding. Applications provided for educational and professional research assistance only; not formal legal or tax advice.
+  </footer>
+</div>
+</body>
+</html>
