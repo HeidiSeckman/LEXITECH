@@ -48,7 +48,7 @@
   .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
   .btn-cyber {
     background: linear-gradient(135deg, #FF2A85 0%, #9E0E50 100%); color: #FFFFFF; text-decoration: none;
-    font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; padding: 14px 24px;
+    font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; padding: 14px 24px; cursor: pointer;
     border: 1px solid #FF99C8; box-shadow: 0 0 25px rgba(255, 42, 133, 0.65);
     clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%); transition: 0.2s;
   }
@@ -145,7 +145,7 @@
         </div>
       </div>
       <div class="card-links">
-        <a href="https://streamlit.app" target="_blank" class="btn-cyber">🚀 LAUNCH MODULE</a>
+        <button class="btn-cyber" onclick="openApp('lexitech-tax-trap-contract-scanner-kzkf4rappq6fesvy2gy7kgs')">🚀 LAUNCH MODULE</button>
         <a href="https://github.com/lexitech-tax-trap-contract-scanner" target="_blank" class="btn-ghost">SOURCE</a>
       </div>
     </div>
@@ -163,7 +163,7 @@
         </div>
       </div>
       <div class="card-links">
-        <a href="https://streamlit.app" target="_blank" class="btn-cyber">🚀 LAUNCH MODULE</a>
+        <button class="btn-cyber" onclick="openApp('legal-tax-ai-assistant-8vttj8mpyeo3dlaoxzunac')">🚀 LAUNCH MODULE</button>
         <a href="https://github.com/legal-tax-ai-assistant" target="_blank" class="btn-ghost">SOURCE</a>
       </div>
     </div>
@@ -176,6 +176,9 @@
 </div>
 
 <script>
+function openApp(slug) {
+  window.open('https://' + slug + '.streamlit.app/', '_blank');
+}
 const traps = [
   `<div class="c-line">&gt; [CORPUS_A] Marital Settlement § 4.2: Claims child without Form 8332.</div>
    <div class="c-line">&gt; [CORPUS_B] IRS Pub 4012 C-4: Post-2008 decrees invalid without Form 8332.</div>
