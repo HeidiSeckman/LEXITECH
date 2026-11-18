@@ -7,21 +7,12 @@
 <link rel="icon" type="image/png" href="LEXItech.PNG" />
 <link href="https://googleapis.com" rel="stylesheet" />
 <style>
- :root { --card:rgba(36,16,28,0.86); --pink:#FF2A85; --rose:#F9A8D4; --border:rgba(255,42,133,0.35); --text:#FFF5FA; --muted:#E5C1D3; }
+ :root { --card:rgba(36,16,28,0.84); --pink:#FF2A85; --rose:#F9A8D4; --border:rgba(255,42,133,0.35); --text:#FFF5FA; --muted:#E5C1D3; }
  * { box-sizing:border-box; margin:0; padding:0; }
  html { scroll-behavior:smooth; }
- body {
-   background-color:#0D040A;
-   background-image:
-     radial-gradient(circle at 50% 14%, rgba(82,22,58,0.65) 0%, rgba(22,8,17,0.92) 55%, #0D040A 100%),
-     linear-gradient(rgba(255,42,133,0.06) 1px, transparent 1px),
-     linear-gradient(90deg, rgba(255,42,133,0.06) 1px, transparent 1px);
-   background-size: 100% 100%, 44px 44px, 44px 44px;
-   color:var(--text);
-   font-family:'Plus Jakarta Sans',sans-serif;
-   min-height:100vh;
-   overflow-x:hidden;
- }
+ body { background:radial-gradient(circle at 50% 14%, #331126 0%, #160811 55%, #0D040A 100%); color:var(--text); font-family:'Plus Jakarta Sans',sans-serif; min-height:100vh; overflow-x:hidden; }
+ .bg-layer { position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:-1; }
+ .tech-bg { width:100%; height:100%; display:block; pointer-events:none; }
  .wrap { max-width:1160px; margin:0 auto; padding:26px 22px 48px; position:relative; z-index:10; }
  .topbar { display:flex; justify-content:space-between; align-items:center; background:var(--card); border:1px solid var(--border); backdrop-filter:blur(16px); border-radius:16px; padding:12px 22px; margin-bottom:26px; }
  .brand { display:flex; align-items:center; gap:14px; font-weight:800; font-size:25px; }
@@ -64,6 +55,20 @@
 </style>
 </head>
 <body>
+<div class="bg-layer">
+<svg class="tech-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://w3.org">
+ <defs><polygon id="hex" points="28,0 56,16 56,48 28,64 0,48 0,16" /></defs>
+ <g stroke="rgba(255,255,255,0.13)" stroke-width="1.6" fill="none" stroke-linecap="round">
+ <path d="M-20,110 L90,0 M-20,165 L145,0 M-20,235 L65,150 L95,150 L215,30 M-20,315 L35,260 L35,215 L110,140 L145,140 L205,80 M-20,420 L75,325 L115,325 L295,145" />
+ <path d="M1460,40 L1320,40 L1215,145 L1175,145 L1035,285 L995,285 L875,405 M1460,115 L1340,115 L1220,235 L1155,235 L1015,375 M1460,210 L1365,210 L1255,320 L1200,320 L1055,465 M1460,330 L1335,330 L1145,520 L1105,520 L1035,590" />
+ <circle cx="215" cy="30" r="3.5" fill="rgba(255,255,255,0.22)" /><circle cx="205" cy="80" r="3.5" fill="rgba(255,255,255,0.22)" /><circle cx="295" cy="145" r="3.5" fill="rgba(255,255,255,0.22)" />
+ <circle cx="875" cy="405" r="3.8" fill="rgba(255,255,255,0.24)" /><circle cx="1015" cy="375" r="3.5" fill="rgba(255,255,255,0.22)" /><circle cx="1055" cy="465" r="3.5" fill="rgba(255,255,255,0.22)" /><circle cx="1035" cy="590" r="3.5" fill="rgba(255,255,255,0.22)" />
+ </g>
+ <g transform="translate(360,-10)"><use href="#hex" x="0" y="0" fill="rgba(255,255,255,0.04)" /><use href="#hex" x="62" y="0" fill="rgba(255,255,255,0.07)" /><use href="#hex" x="31" y="54" fill="rgba(255,255,255,0.05)" /></g>
+ <g transform="translate(20,690)"><use href="#hex" x="62" y="0" fill="rgba(255,255,255,0.06)" /><use href="#hex" x="31" y="54" fill="rgba(255,255,255,0.08)" /><use href="#hex" x="93" y="54" fill="rgba(255,255,255,0.05)" /><use href="#hex" x="0" y="108" fill="rgba(255,255,255,0.09)" /><use href="#hex" x="62" y="108" fill="rgba(255,255,255,0.05)" /><use href="#hex" x="124" y="108" fill="rgba(255,255,255,0.08)" /><use href="#hex" x="31" y="162" fill="rgba(255,255,255,0.07)" /><use href="#hex" x="93" y="162" fill="rgba(255,255,255,0.10)" /><use href="#hex" x="155" y="162" fill="rgba(255,255,255,0.06)" /></g>
+ <g transform="translate(1080,680)"><use href="#hex" x="93" y="0" fill="rgba(255,255,255,0.06)" /><use href="#hex" x="62" y="54" fill="rgba(255,255,255,0.08)" /><use href="#hex" x="124" y="54" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" /><use href="#hex" x="31" y="108" fill="rgba(255,255,255,0.05)" /><use href="#hex" x="93" y="108" fill="rgba(255,255,255,0.09)" /><use href="#hex" x="155" y="108" fill="rgba(255,255,255,0.06)" /><use href="#hex" x="62" y="162" fill="rgba(255,255,255,0.05)" /><use href="#hex" x="124" y="162" fill="rgba(255,255,255,0.08)" /></g>
+</svg>
+</div>
 <div class="wrap">
  <div class="topbar">
  <div class="brand"><div class="logo-badge"><img src="LEXItech.PNG" alt="LexiTech" /></div><div>LEXI<span>TECH</span></div></div>
