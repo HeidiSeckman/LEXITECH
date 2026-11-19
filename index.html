@@ -169,5 +169,66 @@ draw();
   }, 55);
 })();
 </script>
+  <style>
+@keyframes lexiFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
+}
+@keyframes lexiAura {
+  0%, 100% { box-shadow: 0 0 18px rgba(255,42,133,0.65), 0 0 38px rgba(255,42,133,0.35); border-color: #FF2A85; }
+  50% { box-shadow: 0 0 32px rgba(255,42,133,0.95), 0 0 64px rgba(249,168,212,0.55); border-color: #F9A8D4; }
+}
+#lexi-floater {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px 8px 8px;
+  border-radius: 999px;
+  background: rgba(24, 9, 19, 0.92);
+  border: 2px solid #FF2A85;
+  backdrop-filter: blur(14px);
+  text-decoration: none;
+  color: #FFF5FA;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  animation: lexiFloat 3.4s ease-in-out infinite, lexiAura 2.2s ease-in-out infinite;
+  transition: transform 0.2s ease;
+}
+#lexi-floater:hover {
+  animation-play-state: paused;
+  transform: scale(1.06);
+}
+#lexi-floater img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 25%;
+  border: 2px solid #FF2A85;
+}
+</style>
+
+<a id="lexi-floater" href="#modules" target="_blank" rel="noopener">
+  <img src="https://github.io" alt="LEXI" />
+  <div>
+    <div style="color:#FF2A85;font-size:10px;letter-spacing:1px;">● VOICE CORE LIVE</div>
+    <div>TALK TO LEXI ↗</div>
+  </div>
+</a>
+
+<script>
+(() => {
+  const lexiSubdomain = "lexi-core";
+  const btn = document.getElementById("lexi-floater");
+  if (btn && lexiSubdomain !== "lexi-core") {
+    btn.href = "https://" + [lexiSubdomain, "streamlit", "app"].join(".");
+  }
+})();
+</script>
 </body>
 </html>
