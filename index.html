@@ -126,5 +126,33 @@ function draw() {
 }
 draw();
 </script>
+<canvas id="codeRain" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.28;"></canvas>
+<script>
+(() => {
+ const rc = document.getElementById('codeRain'), rctx = rc.getContext('2d');
+ const chars = '01アイウエオカキクケコLEXITECH§10998332';
+ let cols, drops;
+ function resizeRain() {
+   rc.width = window.innerWidth;
+   rc.height = window.innerHeight;
+   cols = Math.floor(rc.width / 18);
+   drops = Array(cols).fill(1).map(() => Math.random() * -40);
+ }
+ resizeRain();
+ window.addEventListener('resize', resizeRain);
+ setInterval(() => {
+   rctx.fillStyle = 'rgba(13, 4, 10, 0.14)';
+   rctx.fillRect(0, 0, rc.width, rc.height);
+   rctx.font = '13px "JetBrains Mono", monospace';
+   for (let i = 0; i < drops.length; i++) {
+     const ch = chars[Math.floor(Math.random() * chars.length)];
+     rctx.fillStyle = Math.random() > 0.85 ? '#F9A8D4' : '#FF2A85';
+     rctx.fillText(ch, i * 18, drops[i] * 18);
+     if (drops[i] * 18 > rc.height && Math.random() > 0.975) drops[i] = 0;
+     drops[i] += 0.55;
+   }
+ }, 55);
+})();
+</script>
 </body>
 </html>
